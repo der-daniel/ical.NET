@@ -1,12 +1,12 @@
 # ical.NET
 
-**ical.NET** is a free, open source ical import library for UAP. 
-Calendars are a big player on end user devices like phone, tablets or PCs. Widley used formats - like [iCal](https://tools.ietf.org/html/rfc5545) - are easy to implement, but however everyone does it a little different.  
+**ical.NET** is a free iCal/ICS parser written in C#.  
 
-This variation creates some serious problem, when it comes down to identifying time zone.  
-For example these time zone ids can be found for US Central Time (UTC -6:00):  
-+ US-Central
-+ US/Central
-+ US Central
-+ US_Central
 
+## Usage
+Import the .cs files.  
+Pass a .ics file as a string to the constructor of **vCalendar**.
+
+```CS
+vCalendar vcalendar = new vCalendar(icsFile);
+```
