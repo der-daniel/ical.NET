@@ -17,5 +17,17 @@ namespace iCal_sync.ical_NET.Model
             foreach (Match contentline in Regex.Matches(vevent, @"(.*?:.*(\n\s.*)*)"))
                 ContentLines.Add(new ContentLine(contentline.Groups[1].Value));
         }
+
+        public ContentLine GetContentLine(string name)
+        {
+            return ContentLines.FirstOrDefault(x => x.Name.Equals(name));
+        }
+
+        public string GetContentLineValueOrDefault(string name)
+        {
+            ContentLine contentline = ContentLines.FirstOrDefault(x => x.Name.Equals(name));
+            return contentline != null ? contentline.GetFormattedValue() : "";
+        }
+
     }
 }

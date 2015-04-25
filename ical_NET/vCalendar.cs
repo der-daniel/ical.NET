@@ -1,10 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace iCal_sync.ical_NET.Model
 {
     public class vCalendar
     {
+        public List<ContentLine> Properties { get; set; }
+        public List<vEvent> vEvents { get; set; }
+
+
         public vCalendar(string icsFile)
         {
             Properties = new List<ContentLine>();
@@ -16,7 +21,10 @@ namespace iCal_sync.ical_NET.Model
                 vEvents.Add(new vEvent(vevent.Groups[1].Value));
         }
 
-        public List<ContentLine> Properties { get; set; }
-        public List<vEvent> vEvents { get; set; }
+
+        public ContentLine GetProperty(string name)
+        {
+            return Properties.FirstOrDefault(x => x.Name.Equals(name));
+        }
     }
 }
