@@ -114,13 +114,10 @@
     <Compile Include="Model\ContentLineParameters.cs" />
     <Compile Include="Model\vCalendar.cs" />
     <Compile Include="Model\vEvent.cs" />
-    <Compile Include="Parser\iCalParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\iCalNET.rd.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factory\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
